@@ -9,28 +9,48 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selection = 0
+//    @State private var selection = 0
+    @State var bookTitle: String = ""
+    @State var books: [Book] = [
+        Book(rel: BookRelation(source: "Book A", reltype: "same author", target: "Book B"))
+    ]
  
     var body: some View {
-        TabView(selection: $selection){
-            Text("Whole Book List")
-                .font(.title)
-                .tabItem {
-                    VStack {
-                        Image("first")
-                        Text("Whole Book List")
+        VStack {
+            HStack {
+                
+                TextField("Type the Book title you want to search", text: $bookTitle)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(.all)
+                
+                Button(
+                    action: {
+                        print("Button Tapped")
+                        print(self.$bookTitle)
+                },
+                    label: {
+                        Text("Search")
+                        
+                })
+                    .padding(.all)
+                
+            }
+            
+            List(books.indices) { index in
+                HStack {
+                    Image("default-cover")
+                        .resizable()
+                        .cornerRadius(4)
+                        .frame(width: 50, height: 70, alignment: .leading)
+                    VStack(alignment: .leading, spacing: 5) {
+                        
+                        Text(self.books[index].title)
+                            .bold()
+                            .font(.title)
+                        Text(self.books[index].relation)
                     }
                 }
-                .tag(0)
-            Text("Second View")
-                .font(.title)
-                .tabItem {
-                    VStack {
-                        Image("second")
-                        Text("Second")
-                    }
-                }
-                .tag(1)
+            }
         }
     }
 }

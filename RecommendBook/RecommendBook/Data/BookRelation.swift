@@ -1,5 +1,5 @@
 //
-//  BookViewModel.swift
+//  BookRelation.swift
 //  RecommendBook
 //
 //  Created by He Wu on 2020/07/10.
@@ -9,7 +9,8 @@
 
 import Foundation
 
-struct BookViewModel {
-    let isbn13: String
-    let title: String
+struct BookRelation: Codable {
+    let source: String
+    let reltype: String
+    let target: String
 }

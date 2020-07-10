@@ -3,23 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		EBC430AB6D005D63FACB8446 /* Pods_RecommendBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC1417FECB5D31E2E6565E6A /* Pods_RecommendBook.framework */; };
+		F084974024B88E72003F9575 /* BookRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F084973F24B88E72003F9575 /* BookRelation.swift */; };
+		F084974224B890F6003F9575 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F084974124B890F6003F9575 /* APIClient.swift */; };
+		F084974424B89B2C003F9575 /* BookRelationsFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F084974324B89B2C003F9575 /* BookRelationsFinder.swift */; };
 		F0F6113D24B8812B0027D2A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F6113C24B8812B0027D2A4 /* AppDelegate.swift */; };
 		F0F6113F24B8812B0027D2A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F6113E24B8812B0027D2A4 /* SceneDelegate.swift */; };
 		F0F6114124B8812B0027D2A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F6114024B8812B0027D2A4 /* ContentView.swift */; };
 		F0F6114324B8812C0027D2A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0F6114224B8812C0027D2A4 /* Assets.xcassets */; };
 		F0F6114624B8812C0027D2A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0F6114524B8812C0027D2A4 /* Preview Assets.xcassets */; };
 		F0F6114924B8812C0027D2A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0F6114724B8812C0027D2A4 /* LaunchScreen.storyboard */; };
-		F0F6115324B882F70027D2A4 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F6115224B882F70027D2A4 /* BookViewModel.swift */; };
+		F0F6115324B882F70027D2A4 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F6115224B882F70027D2A4 /* Book.swift */; };
+		F0F6115724B88BD30027D2A4 /* GetRelationBookListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F6115624B88BD30027D2A4 /* GetRelationBookListRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		555F5437FB1903CC52737862 /* Pods-RecommendBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecommendBook.release.xcconfig"; path = "Target Support Files/Pods-RecommendBook/Pods-RecommendBook.release.xcconfig"; sourceTree = "<group>"; };
 		CC1417FECB5D31E2E6565E6A /* Pods_RecommendBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecommendBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F084973F24B88E72003F9575 /* BookRelation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRelation.swift; sourceTree = "<group>"; };
+		F084974124B890F6003F9575 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		F084974324B89B2C003F9575 /* BookRelationsFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRelationsFinder.swift; sourceTree = "<group>"; };
 		F0F6113924B8812B0027D2A4 /* RecommendBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecommendBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F6113C24B8812B0027D2A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0F6113E24B8812B0027D2A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,7 +35,8 @@
 		F0F6114524B8812C0027D2A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F0F6114824B8812C0027D2A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0F6114A24B8812C0027D2A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F0F6115224B882F70027D2A4 /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
+		F0F6115224B882F70027D2A4 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		F0F6115624B88BD30027D2A4 /* GetRelationBookListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRelationBookListRequest.swift; sourceTree = "<group>"; };
 		F426EC53A8FCCA78483D49A6 /* Pods-RecommendBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecommendBook.debug.xcconfig"; path = "Target Support Files/Pods-RecommendBook/Pods-RecommendBook.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,7 +66,6 @@
 				F426EC53A8FCCA78483D49A6 /* Pods-RecommendBook.debug.xcconfig */,
 				555F5437FB1903CC52737862 /* Pods-RecommendBook.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,6 +90,7 @@
 		F0F6113B24B8812B0027D2A4 /* RecommendBook */ = {
 			isa = PBXGroup;
 			children = (
+				F0F6115524B88B650027D2A4 /* API */,
 				F0F6115424B883000027D2A4 /* Data */,
 				F0F6113C24B8812B0027D2A4 /* AppDelegate.swift */,
 				F0F6113E24B8812B0027D2A4 /* SceneDelegate.swift */,
@@ -106,9 +114,20 @@
 		F0F6115424B883000027D2A4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				F0F6115224B882F70027D2A4 /* BookViewModel.swift */,
+				F0F6115224B882F70027D2A4 /* Book.swift */,
+				F084974324B89B2C003F9575 /* BookRelationsFinder.swift */,
+				F084973F24B88E72003F9575 /* BookRelation.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		F0F6115524B88B650027D2A4 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F0F6115624B88BD30027D2A4 /* GetRelationBookListRequest.swift */,
+				F084974124B890F6003F9575 /* APIClient.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,9 +245,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F084974424B89B2C003F9575 /* BookRelationsFinder.swift in Sources */,
+				F084974024B88E72003F9575 /* BookRelation.swift in Sources */,
+				F084974224B890F6003F9575 /* APIClient.swift in Sources */,
 				F0F6113D24B8812B0027D2A4 /* AppDelegate.swift in Sources */,
-				F0F6115324B882F70027D2A4 /* BookViewModel.swift in Sources */,
+				F0F6115324B882F70027D2A4 /* Book.swift in Sources */,
 				F0F6113F24B8812B0027D2A4 /* SceneDelegate.swift in Sources */,
+				F0F6115724B88BD30027D2A4 /* GetRelationBookListRequest.swift in Sources */,
 				F0F6114124B8812B0027D2A4 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
