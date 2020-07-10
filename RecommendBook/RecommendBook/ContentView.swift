@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     @State var bookTitle: String = ""
     
-    let bookFinder = BookRelationFinder()
+    @ObservedObject var bookFinder = BookRelationFinder()
  
     var body: some View {
         VStack(alignment: .leading) {
@@ -54,17 +54,6 @@ struct ContentView: View {
     
     func findRelatedBooks() {
         bookFinder.findRelatedBooks(title: bookTitle)
-//        bookFinder.findRelatedBooks(title: bookTitle, completion: { res in
-//            switch res {
-//            case let .success(_books):
-//                print(_books)
-//                DispatchQueue.main.async {
-//                    self.books = _books
-//                }
-//            case let .failure(error):
-//                print("Failed to find related books: \(error.localizedDescription)")
-//            }
-//        })
     }
 }
 

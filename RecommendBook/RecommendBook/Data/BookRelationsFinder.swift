@@ -19,7 +19,7 @@ final class BookRelationFinder: ObservableObject {
             case let .success(data):
                 let books = data.map { Book(rel: $0) }
                 completion?(.success(books))
-                print(books)
+                print(books.count)
                 DispatchQueue.main.async {
                     self.booksData = books
                 }
