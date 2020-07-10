@@ -9,14 +9,12 @@
 import SwiftUI
 
 struct ContentView: View {
-//    @State private var selection = 0
     @State var bookTitle: String = ""
-    @State var books: [Book] = [
-        Book(rel: BookRelation(source: "Book A", reltype: "same author", target: "Book B"))
-    ]
+    
+    let bookFinder = BookRelationFinder()
  
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             HStack {
                 
                 TextField("Type the Book title you want to search", text: $bookTitle)
@@ -24,10 +22,7 @@ struct ContentView: View {
                     .padding(.all)
                 
                 Button(
-                    action: {
-                        print("Button Tapped")
-                        print(self.$bookTitle)
-                },
+                    action: findRelatedBooks,
                     label: {
                         Text("Search")
                         
@@ -36,22 +31,40 @@ struct ContentView: View {
                 
             }
             
-            List(books.indices) { index in
+            Text("Search Result: ")
+                .bold()
+                .padding(.leading, 15)
+                .font(.largeTitle)
+            
+            List(bookFinder.booksData) { book in
                 HStack {
                     Image("default-cover")
                         .resizable()
                         .cornerRadius(4)
                         .frame(width: 50, height: 70, alignment: .leading)
                     VStack(alignment: .leading, spacing: 5) {
-                        
-                        Text(self.books[index].title)
+                        Text(book.title)
                             .bold()
-                            .font(.title)
-                        Text(self.books[index].relation)
+                        Text(book.relation)
                     }
                 }
             }
         }
+    }
+    
+    func findRelatedBooks() {
+        bookFinder.findRelatedBooks(title: bookTitle)
+//        bookFinder.findRelatedBooks(title: bookTitle, completion: { res in
+//            switch res {
+//            case let .success(_books):
+//                print(_books)
+//                DispatchQueue.main.async {
+//                    self.books = _books
+//                }
+//            case let .failure(error):
+//                print("Failed to find related books: \(error.localizedDescription)")
+//            }
+//        })
     }
 }
 

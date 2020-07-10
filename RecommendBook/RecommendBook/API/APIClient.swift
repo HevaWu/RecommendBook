@@ -36,6 +36,6 @@ final class APIClient {
             }
             
             completion(.success(res))
-        }
+        }.resume()
     }
 }

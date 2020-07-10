@@ -10,13 +10,12 @@
 import Foundation
 
 struct Book: Identifiable {
-    var id: String
+    var id = UUID()
     
     let title: String
     let relation: String
     
     init(rel: BookRelation) {
-        self.id = rel.target
         self.title = rel.target
         self.relation = rel.reltype
     }

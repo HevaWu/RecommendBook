@@ -9,24 +9,22 @@
 
 import Foundation
 
-final class BookRelationFinder {
-    enum FinderError: Error {
-        case apiError(APIError)
-    }
+final class BookRelationFinder: ObservableObject {
     
-    let title: String
-    init(title: String) {
-        self.title = title
-    }
+    @Published var booksData: [Book] = []
     
-    func findRelatedBooks(completion: @escaping (Result<[Book], FinderError>) -> Void) {
-        APIClient.shared.send(request: GetRelationBookListRequest(title: title)) { res in
+    func findRelatedBooks(title: String, completion: ((Result<[Book], APIError>) -> Void)? = nil) {
+        APIClient.shared.send(request: GetRelationBookListRequest(title: title)) { [unowned self] res in
             switch res {
             case let .success(data):
                 let books = data.map { Book(rel: $0) }
-                completion(.success(books))
+                completion?(.success(books))
+                print(books)
+                DispatchQueue.main.async {
+                    self.booksData = books
+                }
             case let .failure(error):
-                completion(.failure(.apiError(error)))
+                completion?(.failure(error))
             }
         }
     }

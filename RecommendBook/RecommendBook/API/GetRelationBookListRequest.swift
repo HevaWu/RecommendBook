@@ -14,7 +14,7 @@ protocol Request {
     var method: String { set get }
     var path: String { get }
     var component: URLComponents { get }
-    var queryParams: [String: Any]? { get }
+    var queryParams: [String: String]? { get }
 }
 
 extension Request {
@@ -22,7 +22,8 @@ extension Request {
         var components: URLComponents = component
         components.path = path
         if let query = queryParams, !query.isEmpty {
-            components.percentEncodedQuery = Self.string(from: query)
+//            let _queryStr = Self.string(from: query)
+            components.queryItems = query.map { URLQueryItem(name: $0.key, value: $0.value)}
         }
         
         var urlRequest = URLRequest(url: components.url!)
@@ -43,7 +44,7 @@ final class GetRelationBookListRequest: Request {
     
     typealias Response = [BookRelation]
     
-    var queryParams: [String: Any]? {
+    var queryParams: [String: String]? {
         return ["q": title]
     }
     
@@ -51,8 +52,9 @@ final class GetRelationBookListRequest: Request {
     
     var component: URLComponents {
         var component = URLComponents()
-        component.scheme = "http:"
-        component.host = "10.231.183.231:8444"
+        component.scheme = "http"
+        component.host = "10.231.183.231"
+        component.port = 8444
         return component
     }
     let path: String = "/map"
