@@ -9,3 +9,5 @@ This project is also a testing of using SwiftUI.
 - GetRequest
 - Finder(for helping showing search result) (ObservableObject, @Published)
 - ContentView (SwiftUI view for showing the list & above searching area)
+
+The testing server host is the private host, so if you would like to test, please try to update the host & request to your own settings.
